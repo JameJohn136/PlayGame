@@ -37,6 +37,8 @@ namespace PlayGame
             countDownSound = new SoundPlayer(Properties.Resources.countDownSound);
             startSound = new SoundPlayer(Properties.Resources.startSound);
 
+            GetTimer();
+
             loopNum = timer;
             RefreshText();
 
@@ -63,6 +65,12 @@ namespace PlayGame
             
         }
 
+        private void GetTimer()
+        {
+            string timerString = textBox1.Text;
+            timer = Int32.Parse(timerString);
+        }
+
         private void startText_Click(object sender, EventArgs e)
         {
             
@@ -75,8 +83,7 @@ namespace PlayGame
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string timerString = textBox1.Text;
-            timer = Int32.Parse(timerString);
+            
         }
     }
 }
